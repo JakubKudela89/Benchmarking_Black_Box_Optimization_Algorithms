@@ -51,15 +51,6 @@ parts = strsplit(pwd, filesep); parts{end + 1} = 'DIRECTGOLib-main';
 parts{end + 1} = 'box'; parts{end + 1} = 'Layeb';  
 parent_path = strjoin(parts(1:end), filesep); addpath(parent_path); 
 
-%% Path to algorithms
-if not(isfolder('Black_Box_Optimization_Algorithms-main'))
-    fullURL = 'https://github.com/JakubKudela89/Black_Box_Optimization_Algorithms/archive/refs/heads/main.zip';
-    filename = 'files.zip';
-    websave(filename, fullURL);
-    unzip('files.zip'); 
-    delete('files.zip')
-end
-
 if not(isfolder('Results'))
     mkdir('Results');
 end
